@@ -2,10 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 
-import { createStore } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
+import createSagaMiddleware from 'redux-saga';
 
 import reducer from './redux/reducer';
+import {watcherSaga} from './redux/sagas';
 
 import * as serviceWorker from './serviceWorker';
 
@@ -16,7 +18,13 @@ import App from './components/app';
 const reduxDevTools =
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
 
-const store = createStore(reducer, reduxDevTools);
+const sagaMiddleware = createSagaMiddleware();
+const store = createStore(
+  reducer,
+  compose(applyMiddleware(sagaMiddleware), reduxDevTools)
+);
+
+sagaMiddleware.run(watcherSaga);
 
 ReactDOM.render(
   <Provider store={store}>

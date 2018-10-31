@@ -4,7 +4,7 @@
   background: url(./search.svg) no-repeat scroll 20px 20px;
   background-size: 15px auto;
   background-color: #F4F8FE;
-  border: 1px solid #a6cafb;
+  border: 1px solid #F4F8FE;
   border-radius: 30px;
   outline: none;
   font-size: 0.8em;
@@ -12,6 +12,11 @@
   padding-left: 55px;
   box-sizing: border-box;
   color: #93A0A2;
+  transition: all 1s ease;
+}
+
+.search:focus {
+  border: 1px solid #a6cafb;
 }
 
 .search::-webkit-input-placeholder { /* Chrome/Opera/Safari */
