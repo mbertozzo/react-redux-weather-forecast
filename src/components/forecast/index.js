@@ -8,7 +8,7 @@ const Forecast = (props) => {
       <h4>Day {day}</h4>
 
       {
-        data.map(item => {
+        data.map((item, i) => {
           const time = new Date(item.dt*1000)
           const hours = ("0" + time.getHours()).slice(-2);
           const mins = ("0" + time.getMinutes()).slice(-2);
@@ -17,8 +17,8 @@ const Forecast = (props) => {
 
           return React.createElement(
             'p',
-            null,
-            `Forecasted <b>${weather}</b> at ${hours}:${mins}`
+            {key: i},
+            `Forecasted ${weather} at ${hours}:${mins}`
           )  
         })
       }

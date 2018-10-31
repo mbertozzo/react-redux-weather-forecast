@@ -3,7 +3,7 @@ import axios from 'axios';
 import _ from 'lodash';
 
 import { UPDATE_PLACE, updateForecast, apiCallError } from './../actions';
-import { APPID } from './apikey.js';
+import { API_KEY } from './apikey.js';
 
 export function* watcherSaga() {
   yield takeLatest(UPDATE_PLACE, workerSaga);
@@ -12,7 +12,7 @@ export function* watcherSaga() {
 const fetchForecast = (city, country) => {
   return axios({
     method: 'get',
-    url: `http://api.openweathermap.org/data/2.5/forecast?q=${city},${country}&mode=json&APPID=${APPID}`
+    url: `http://api.openweathermap.org/data/2.5/forecast?q=${city},${country}&mode=json&APPID=${API_KEY}`
   })
 }
 
