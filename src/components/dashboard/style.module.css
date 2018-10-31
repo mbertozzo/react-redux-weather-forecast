@@ -13,6 +13,7 @@
   box-sizing: border-box;
   color: #93A0A2;
   transition: all 1s ease;
+  margin-bottom: 50px;
 }
 
 .search:focus {
@@ -30,4 +31,9 @@
 }
 .search:-moz-placeholder { /* Firefox 18- */
   color: #93A0A2;
+}
+
+.cityName {
+  text-transform: capitalize;
+  font-weight: 600;
 }

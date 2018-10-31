@@ -1,5 +1,6 @@
 import { takeLatest, call, put } from 'redux-saga/effects';
 import axios from 'axios';
+import _ from 'lodash';
 
 import { UPDATE_PLACE, updateForecast, apiCallError } from './../actions';
 import { APPID } from './apikey.js';
@@ -15,6 +16,19 @@ const fetchForecast = (city, country) => {
   })
 }
 
+/**
+ * Remove from the dt_txt value the time, keepig just the date,
+ * in order to be able to group forecasts by day and returns the
+ * updated array.
+ * @param {obj} data 
+ */
+const sortForecast = (data) => {
+  const newDate = data.map(item => (
+    {...item, dt_txt: item.dt_txt.slice(0,10)}
+  ));
+  return _.mapValues(_.groupBy(newDate, 'dt_txt'))
+}
+
 function* workerSaga(action) {
   try {
     const { city, country } = action.payload;
@@ -22,8 +36,12 @@ function* workerSaga(action) {
     const response = yield call(fetchForecast,[city, country]);
     const forecast = response.data.list;
 
-    yield put(updateForecast(forecast));
+    const sortedForecast = sortForecast(forecast);
+
+    yield put(updateForecast(sortedForecast));
   } catch (error) {
     yield put (apiCallError(error))
   }
 }
+
+
