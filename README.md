@@ -8,7 +8,7 @@ If you want to play around with this project, just clone it to your local machin
 
 ### Using Redux DevTools
 
-You can track what's happening in the Redux Store by connecting the app to the Redux DevTools. To use the feature, install the DevTools extension ([click here for the Chrome Web Store](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en-GB)) and uncomment the following lines in `src/indexjs`:
+You can track what's happening in the Redux Store by connecting the app to the Redux DevTools. To use the feature, install the DevTools extension ([click here for the Chrome Web Store](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en-GB)) and uncomment the following lines in `src/index.js`:
 
 ```javascript
 const reduxDevTools =

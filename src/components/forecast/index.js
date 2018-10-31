@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Weather from './../weather';
+
 const Forecast = (props) => {
   const { day, data } = props;
 
@@ -15,11 +17,13 @@ const Forecast = (props) => {
           
           const weather = item.weather[0].main;
 
-          return React.createElement(
-            'p',
-            {key: i},
-            `Forecasted ${weather} at ${hours}:${mins}`
-          )  
+          return <Weather key={i} icon={weather}>{hours}:{mins}</Weather>
+
+          // return React.createElement(
+          //   'p',
+          //   {key: i},
+          //   `Forecasted ${weather} at ${hours}:${mins}`
+          // )  
         })
       }
     </React.Fragment>
