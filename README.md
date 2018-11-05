@@ -2,6 +2,8 @@
 
 This is an app that provides weather forecasts for your favourite location by consuming the **Open Weather Map** API. 
 
+![Weather Forecast Screenshot](screenshot.png)
+
 ## Getting started
 
 If you want to play around with this project, just clone it to your local machine and install the dependecies with the command `$ yarn`.
@@ -50,3 +52,6 @@ const forecast = (
   action
 ) => ...
 ```
+
+## Get involved!
+I'm aware that some parts of the app may appear overcomplicated: this is something built for fun and to learn, it was an intentional choice to make the exercise more relevant to me. If you can't stand that and absolutely want to provide a cleaner, more reliable and more perfomant solution, you're very welcome to open a pull request so that we can learn from each other :stuck_out_tongue_winking_eye:. 

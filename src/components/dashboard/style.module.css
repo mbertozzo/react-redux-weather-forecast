@@ -41,14 +41,15 @@
   text-decoration: none;
 }
 
-.results {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
 .resultsTitle {
   color: #93A0A2;
   text-transform: uppercase;
   margin-bottom: 50px;
+}
+
+.results {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 250px);
+  grid-gap: 1rem;
+  justify-content: space-between;
 }

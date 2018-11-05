@@ -1,9 +1,9 @@
 import * as types from './../actions';
 
-// import { dummyData } from './dummyData.js';
+import { dummyData } from './dummyData.js';
 
 const forecast = (
-  state = {},
+  state = dummyData,
   action
 ) => {
   switch(action.type){

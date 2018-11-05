@@ -4,6 +4,7 @@ import styles from './style.module.css';
 import clear from './clear.svg';
 import rain from './rain.svg';
 import clouds from './cloudy.svg';
+import snow from './snow.svg';
 
 const Weather = (props) => {
   const { icon, children } = props;
@@ -26,6 +27,12 @@ const Weather = (props) => {
       {
         (parsedIcon === 'clear') ?
         (<img src={clear} alt={icon} className={styles.icon} />) 
+        : ('')
+      }
+
+      {
+        (parsedIcon === 'snow') ?
+        (<img src={snow} alt={icon} className={styles.icon} />) 
         : ('')
       }
       <p>{children}</p>

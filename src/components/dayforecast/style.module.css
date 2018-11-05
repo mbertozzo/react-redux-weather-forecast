@@ -1,3 +1,23 @@
+.backButton {
+  width: 50px;
+  height: 50px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  color: #93A0A2;
+  background-color: #F4F8FE;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  transition:  all 1s ease;
+}
+
+
+
+.backButton:hover {
+  border: 1px solid #a6cafb;
+}
+
 .resultsTitle {
   color: #93A0A2;
   text-transform: uppercase;
