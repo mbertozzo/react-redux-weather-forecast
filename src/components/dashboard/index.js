@@ -1,9 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { updatePlace } from './../../redux/actions';
 
 import styles from './style.module.css';
-import Forecast from './../forecast';
+import DayCard from './../daycard/';
 
 const mapStateToProps = (state) => {
   return { 
@@ -37,7 +38,7 @@ class Dashboard extends React.Component {
     const {place, forecast, handleUpdatePlace} = this.props;
 
     return (
-      <div>
+      <React.Fragment>
         <input 
           type="text"
           className={styles.search}
@@ -51,17 +52,27 @@ class Dashboard extends React.Component {
         />
 
         {
-          (place.city) ?
-            (<p><span className={styles.cityName}>{place.city}</span> Weather Forecast</p>)
+          (Object.keys(forecast).length !== 0) ?
+            (
+              <React.Fragment>
+                <p className={styles.resultsTitle}>Currently available weather forecast for <span className={styles.cityName}>{place.city || 'City'}</span>:</p>
+                <div className={styles.results}>
+                  {
+                    Object.keys(forecast).map((date, i) => (
+                      <Link to={"/forecast/" + date} className={styles.link} key={i}>
+                        <DayCard date={date}>
+                          View forecast
+                        </DayCard>
+                      </Link>
+                    ))
+                  }
+                </div>
+              </React.Fragment>
+            )
             : ('')
         }
         
-        {
-          Object.keys(forecast).map((date,i) => (
-            <Forecast key={i} day={date} data={forecast[date]} />
-          ))
-        }        
-      </div>
+      </React.Fragment>
     )
   }
 }

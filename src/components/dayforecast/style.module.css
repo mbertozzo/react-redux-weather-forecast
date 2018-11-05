@@ -1,0 +1,9 @@
+.resultsTitle {
+  color: #93A0A2;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+}
+
+.resultsTitle span {
+  font-weight: 600;
+}

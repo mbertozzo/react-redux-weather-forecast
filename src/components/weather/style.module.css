@@ -1,3 +1,8 @@
+.wrapper {
+  display: inline-block;
+  margin-right: 30px;
+}
+
 .icon {
   height: 30px;
   width: auto;

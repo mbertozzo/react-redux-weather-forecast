@@ -32,3 +32,21 @@ Once you got your personal key, save it as follows in a file named `apikey.js` i
 ```javascript
 export const API_KEY = 'YOUR_API_KEY_HERE';
 ```
+
+### Don't want to register to the API?
+You can still test and extend this app by using some dummy data. This is also particularly useful if you're developing new components and don't want to exceed the API request limit, even though you won't get real time weather forecast nor have the chance to play around with the input field to change location.
+
+To load the dummy data to the store you need to open the file at `/src/redux/reducers/forecast.js`. Then, uncomment the import line:
+
+```javascript
+import { dummyData } from './dummyData.js';
+```
+
+and update the initial value for the `state` variable as follows:
+
+```javascript
+const forecast = (
+  state = dummyData,
+  action
+) => ...
+```

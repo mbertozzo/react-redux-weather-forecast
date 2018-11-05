@@ -12,19 +12,19 @@ const Weather = (props) => {
   return (
     <div className={styles.wrapper}>
       {
-        (parsedIcon == 'rain') ?
+        (parsedIcon === 'rain') ?
           (<img src={rain} alt={icon} className={styles.icon} />)
           : ('')
       }
 
       {
-        (parsedIcon == 'clouds') ?
+        (parsedIcon === 'clouds') ?
         (<img src={clouds} alt={icon} className={styles.icon} />) 
         : ('')
       }
 
       {
-        (parsedIcon == 'clear') ?
+        (parsedIcon === 'clear') ?
         (<img src={clear} alt={icon} className={styles.icon} />) 
         : ('')
       }

@@ -34,6 +34,21 @@
 }
 
 .cityName {
-  text-transform: capitalize;
   font-weight: 600;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.results {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.resultsTitle {
+  color: #93A0A2;
+  text-transform: uppercase;
+  margin-bottom: 50px;
 }
