@@ -1,0 +1,9 @@
+.errorTitle {
+  color: #93A0A2;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+}
+
+.errorTitle span {
+  font-weight: 600;
+}

@@ -6,6 +6,7 @@ import styles from './style.module.css';
 import Dashboard from './../dashboard';
 import About from './../about';
 import DayForecast from './../dayforecast';
+import NotFound from './../notfound';
 
 const Main = () => (
   <main className={styles.wrapper}>
@@ -13,6 +14,7 @@ const Main = () => (
       <Route exact path='/' component={Dashboard} />
       <Route path='/about' component={About} />
       <Route path='/forecast/:date' component={DayForecast} />
+      <Route component={NotFound} />
     </Switch>
   </main>
 )

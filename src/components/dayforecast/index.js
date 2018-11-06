@@ -1,11 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
-
 import styles from './style.module.css';
+import BackArrow from './../backarrow';
 import DayCard from './../daycard';
 
 
@@ -24,9 +21,7 @@ class DayForecast extends React.Component {
     return (
       <React.Fragment>
         
-        <Link to="/" className={styles.backButton}>
-          <FontAwesomeIcon icon={faArrowLeft} />
-        </Link>
+        <BackArrow link="/" />
 
         {
           (typeof forecast[date] !== 'undefined') ?

@@ -17,9 +17,12 @@ const fetchForecast = (city, country) => {
 }
 
 /**
- * Remove from the dt_txt value the time, keepig just the date,
- * in order to be able to group forecasts by day and returns the
- * updated array.
+ * Cuts off from dt_txt value everything except for the first 
+ * ten chars [that are the date in the format YYYY-MM-DD].
+ * Then returns an object that has the new dt_txt values as keys 
+ * and an array of weather forecast objects (with a 3-hour 
+ * interval) as values. 
+ * 
  * @param {obj} data 
  */
 const sortForecast = (data) => {
