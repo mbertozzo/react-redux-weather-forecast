@@ -22,17 +22,6 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 class Dashboard extends React.Component {
-  formatTimestamp (timestamp) {
-    const monthsName = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'Septmber', 'October', 'November', 'December']
-
-    const date = new Date(timestamp*1000);
-    const day = date.getDate();
-    const month = date.getMonth();
-    const year = date.getFullYear();
-
-    return `${monthsName[month]} ${day}, ${year}`;
-  }
-
   
   render() {
     const {place, forecast, handleUpdatePlace} = this.props;
@@ -60,7 +49,7 @@ class Dashboard extends React.Component {
                   {
                     Object.keys(forecast).map((date, i) => (
                       <Link to={"/forecast/" + date} className={styles.link} key={i}>
-                        <DayCard date={date}>
+                        <DayCard highlight={date}>
                           View forecast
                         </DayCard>
                       </Link>

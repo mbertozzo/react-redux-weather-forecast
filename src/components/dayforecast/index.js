@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 
 import styles from './style.module.css';
-import Weather from './../weather';
+import DayCard from './../daycard';
 
 
 const mapStateToProps = (state) => {
@@ -33,17 +33,20 @@ class DayForecast extends React.Component {
             (
               <React.Fragment>
                 <p className={styles.resultsTitle}><span>{city}</span> weather forecast for <span>{date}</span>:</p>
-                {
-                  forecast[date].map((item, i) => {
-                    const time = new Date(item.dt*1000)
-                    const hours = ("0" + time.getHours()).slice(-2);
-                    const mins = ("0" + time.getMinutes()).slice(-2);
-                    
-                    const weather = item.weather[0].main;
-          
-                    return <Weather key={i} icon={weather}>{hours}:{mins}</Weather>
-                  })
-                }
+                <div className={styles.results}>
+                  {
+                    forecast[date].map((item, i) => {
+                      const time = new Date(item.dt*1000)
+                      const hours = ("0" + time.getHours()).slice(-2);
+                      const mins = ("0" + time.getMinutes()).slice(-2);
+                      
+                      const weather = item.weather[0].main;
+                      const description = item.weather[0].description;
+            
+                      return <DayCard key={i} highlight={weather}>{description} | <strong>{hours}:{mins}</strong></DayCard>
+                    })
+                  }
+                </div>
               </React.Fragment>
             )
             : (

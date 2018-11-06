@@ -12,8 +12,6 @@
   transition:  all 1s ease;
 }
 
-
-
 .backButton:hover {
   border: 1px solid #a6cafb;
 }
@@ -26,4 +24,11 @@
 
 .resultsTitle span {
   font-weight: 600;
+}
+
+.results {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 250px);
+  grid-gap: 1rem;
+  justify-content: space-between;
 }
