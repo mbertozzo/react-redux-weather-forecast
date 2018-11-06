@@ -49,7 +49,7 @@ class Dashboard extends React.Component {
                   {
                     Object.keys(forecast).map((date, i) => (
                       <Link to={"/forecast/" + date} className={styles.link} key={i}>
-                        <DayCard highlight={date}>
+                        <DayCard highlight={date} hover>
                           View forecast
                         </DayCard>
                       </Link>

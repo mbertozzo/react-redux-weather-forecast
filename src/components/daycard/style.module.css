@@ -6,11 +6,11 @@
   align-items: center;
   justify-content: space-between;
   margin-bottom: 30px;
-  box-shadow: 5px 10px 25px rgb(241, 241, 241);
+  box-shadow: 5px 10px 25px rgb(221, 221, 221);
   transition:  all 1s ease;
 }
 
-.wrapper:hover {
+.wrapperHover:hover {
   border: 1px solid #a6cafb;
 }
 

@@ -30,10 +30,12 @@ const getIcon = (weather) => {
 }
 
 const DayCard = (props) => {
-  const {highlight, children} = props;
+  const {highlight, hover, children} = props;
+  const classes = [styles.wrapper];
+  if (hover) { classes.push(styles.wrapperHover) }
   
   return (
-    <div className={styles.wrapper}>
+    <div className={classes.join(' ')}>
       <div className={styles.date}>
         {
           (highlight.indexOf('-') !== -1) ?
